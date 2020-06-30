@@ -1,0 +1,19 @@
+.title {
+    background: linear-gradient(transparent 70%, #a7d6ff 70%);
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 10px;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.howto {
+    margin: 10px;
+    text-align: center;
+}
+
+.aboutcontent {
+    margin-bottom: 30px;
+}

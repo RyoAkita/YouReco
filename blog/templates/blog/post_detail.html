@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+
+{% block content%}
+<div class="card mb-3">
+    <h4 class="card-header bg-dark text-white">{{ post.title }}</h4>
+    <div class="card-body">
+        {{ post.text | linebreaksbr | urlize}}
+        <hr>
+        <p>Created at {{ post.created_at }}</p>
+        <p>Category {{ post.category}}</p>
+
+    </div>
+  </div>  
+
+{% load static%}
+
+{% block extrahead %}
+<link href="{% static 'post_detail.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% for comment in post.comment_set.all %}
+<div class='box24'>
+    <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+        <strong class="mr-auto comment_name">{{comment.name }}</strong>
+        <div class='comment_time'>
+            <small>{{comment.created_at }}</small>
+        </div>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        </button>
+        </div>
+        <div class="toast-body comment_text">
+            {{comment.text | linebreaksbr}}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+<!--
+<p>
+    {{comment.name }}
+    <br>
+    {{comment.text | linebreaksbr}}
+</p>
+-->
+  <a class='btn btn-dark mb-3' href="{% url 'blog:comment' post.pk %}">Comment</a>
+{% endblock%}

@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+
+{% block content%}
+
+{% load static%}
+{% block extrahead %}
+<link href="{% static 'about.css' %}" rel="stylesheet">
+{% endblock %}
+<div class='aboutcontent'>
+    <h1 class='title'>YouRecoの目的</h1>
+
+    <div class="card-deck">
+        <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">出会い</h4>
+            <p class="card-text"> インターネットの発達により、毎分500時間の動画がアップロードされています。この中からあなたと出会える動画数は限られています。より良い動画との出会いを提供するのがYouRecoです。</p>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">共感</h4>
+            <p class="card-text">好きな場所があればインスタで共有する。好きなイベントがあればFacebookで共有する。好きな動画があればYouRecoで共有する。ただ、それだけ。</p>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">偏見</h4>
+            <p class="card-text">あなたは見えないレコメンドアルゴリズムというものにより、偏った動画のみを見させられています。新しい動画に出会うことがあなたの世界を拡げます。</p>
+        </div>
+        </div>
+    </div>
+    <h1 class='title'>YouRecoの使い方</h1>
+    <p class='howto'>TikTok,YouTube,NicoNico,Instagramなどあなたが発見して『面白い』と感じた動画なら何でもここでお勧めしてください！</p>
+    <p class='howto'>ホームボタンの「オススメを教える！」ボタンからオススメの動画のURLと共にオススメする理由を付けて投稿するだけ！</p>
+</div>
+{% endblock%}

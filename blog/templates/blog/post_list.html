@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+{% load static%}
+
+{% block extrahead %}
+<link href="{% static 'post_detail.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% for post in post_list %}
+<div class="card mb-3">
+    <h4 class="card-header bg-dark text-white">{{ post.title }}</h4>
+    <div class="card-body">
+        <p>{{ post.text | truncatechars:60}}</p>
+        <div class='category'>
+            <p>カテゴリー: {{ post.category}}</p>
+        </div>
+        <a href="{% url 'blog:detail' post.pk %}" class="btn btn-primary">続きを読む</a>
+    </div>
+  </div>  
+{% endfor %}
+
+{% include 'blog/page.html' %}
+{% endblock %}
